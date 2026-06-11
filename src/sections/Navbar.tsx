@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X, Moon, Sun, Download, Sparkles } from 'lucide-react';
+import { Menu, X, Moon, Sun, Download } from 'lucide-react';
 
 interface NavbarProps {
   isLightMode: boolean;

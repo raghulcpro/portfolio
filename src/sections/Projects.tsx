@@ -70,7 +70,7 @@ const InvestIcon = ({ color }: { color: string }) => (
   </svg>
 );
 
-type ProjectIcon = ({ color }: { color: string }) => JSX.Element;
+type ProjectIcon = ({ color }: { color: string }) => React.ReactElement;
 const PROJECT_ICONS: ProjectIcon[] = [PowerBIIcon, FlutterIcon, AndroidIcon, InvestIcon];
 
 const PROJECTS = [
