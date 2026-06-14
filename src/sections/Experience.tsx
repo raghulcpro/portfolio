@@ -130,7 +130,7 @@ export default function Experience() {
                   >
                     <CalendarDays size={12} style={{ color: '#22d3ee' }} />
                     <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11.5, fontWeight: 500, color: '#22d3ee', letterSpacing: '0.04em' }}>
-                      2024
+                      2026
                     </span>
                   </div>
                   <div
