@@ -52,11 +52,11 @@ type CertIcon = typeof CourseraIcon;
 const CERT_ICONS: CertIcon[] = [CourseraIcon, PythonIcon, JavaIcon, FigmaIcon, BlockchainIcon];
 
 const CERTIFICATIONS = [
-  { title: 'Advanced Data Analytics',         provider: 'Coursera',              category: 'Data Science', accent: '#6366f1', gradient: 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)', year: '2024' },
+  { title: 'Advanced Data Analytics',         provider: 'Coursera',              category: 'Data Science', accent: '#6366f1', gradient: 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)', year: '2025' },
   { title: 'Data Analytics using Python',     provider: 'NPTEL',                 category: 'Programming',  accent: '#22d3ee', gradient: 'linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)', year: '2024' },
-  { title: 'Core Java & Full-Stack Development', provider: 'Inlustr',             category: 'Development',  accent: '#8b5cf6', gradient: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)', year: '2023' },
-  { title: 'UI/UX Design',                    provider: 'TVS Training & Services',category: 'Design',       accent: '#f59e0b', gradient: 'linear-gradient(135deg, #f59e0b 0%, #f43f5e 100%)', year: '2023' },
-  { title: 'Basics in Blockchain',            provider: 'Great Learning',         category: 'Web3',         accent: '#10b981', gradient: 'linear-gradient(135deg, #10b981 0%, #14b8a6 100%)', year: '2023' },
+  { title: 'Core Java & Full-Stack Development', provider: 'Inlustr',             category: 'Development',  accent: '#8b5cf6', gradient: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)', year: '2026' },
+  { title: 'UI/UX Design',                    provider: 'TVS Training & Services',category: 'Design',       accent: '#f59e0b', gradient: 'linear-gradient(135deg, #f59e0b 0%, #f43f5e 100%)', year: '2025' },
+  { title: 'Basics in Blockchain',            provider: 'Great Learning',         category: 'Web3',         accent: '#10b981', gradient: 'linear-gradient(135deg, #10b981 0%, #14b8a6 100%)', year: '2024' },
 ];
 
 export default function Certifications() {

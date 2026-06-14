@@ -5,6 +5,24 @@ import { Github, Linkedin, Mail, Phone, MapPin, ArrowUpRight, Send } from 'lucid
 
 gsap.registerPlugin(ScrollTrigger);
 
+const WhatsAppIcon = ({ size, style }: { size?: number | string; style?: React.CSSProperties }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size || 24}
+    height={size || 24}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    style={style}
+  >
+    <path d="M3 21l1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" />
+    <path d="M16.2 13.5a4.53 4.53 0 0 1 1.5 1.5 1.76 1.76 0 0 1-.3 2.1 2.25 2.25 0 0 1-2.5.6 11.23 11.23 0 0 1-5-3.6 11.23 11.23 0 0 1-3.6-5 2.25 2.25 0 0 1 .6-2.5 1.76 1.76 0 0 1 2.1-.3 4.53 4.53 0 0 1 1.5 1.5c.3.5.3 1-.2 1.5l-.6.6a8.87 8.87 0 0 0 3.7 3.7l.6-.6c.4-.4 1-.4 1.5-.2z" />
+  </svg>
+);
+
 const CONTACT_ITEMS = [
   {
     Icon: Mail,
@@ -46,16 +64,16 @@ const SOCIAL_LINKS = [
     label: 'LinkedIn',
     sub: 'raghulvenkatesan',
     href: 'https://linkedin.com/in/raghulvenkatesan-2ab12a263',
-    accent: '#0a66c2',
-    gradient: 'linear-gradient(135deg, #0284c7 0%, #38bdf8 100%)',
+    accent: '#f1f5f9',
+    gradient: 'linear-gradient(135deg, #94a3b8 0%, #f8fafc 100%)',
   },
   {
-    Icon: Mail,
-    label: 'Email',
-    sub: 'raghulgms@gmail.com',
-    href: 'mailto:raghulgms@gmail.com',
-    accent: '#6366f1',
-    gradient: 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)',
+    Icon: WhatsAppIcon,
+    label: 'WhatsApp',
+    sub: '+91 9150131009',
+    href: 'https://wa.me/919150131009',
+    accent: '#f1f5f9',
+    gradient: 'linear-gradient(135deg, #94a3b8 0%, #f8fafc 100%)',
   },
 ];
 
