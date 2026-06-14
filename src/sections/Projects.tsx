@@ -6,14 +6,10 @@ import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const PowerBIIcon = ({ color }: { color: string }) => (
-  <svg viewBox="0 0 56 56" fill="none" width="52" height="52">
-    <rect x="8" y="28" width="10" height="20" rx="2" fill={color} opacity="0.35" />
-    <rect x="23" y="18" width="10" height="30" rx="2" fill={color} opacity="0.60" />
-    <rect x="38" y="8" width="10" height="40" rx="2" fill={color} opacity="1" />
-    <polyline points="13,26 28,16 43,6" stroke={color} strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.5" />
-    <circle cx="13" cy="26" r="2.5" fill={color} opacity="0.55" />
-    <circle cx="28" cy="16" r="2.5" fill={color} opacity="0.75" />
-    <circle cx="43" cy="6" r="2.5" fill={color} />
+  <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+    <path d="M14 2h4.5a1.5 1.5 0 0 1 1.5 1.5v17a1.5 1.5 0 0 1-1.5 1.5H14V2z" fill={color} />
+    <path d="M9 8h4.5a1.5 1.5 0 0 1 1.5 1.5v11a1.5 1.5 0 0 1-1.5 1.5H9V8z" fill={color} opacity="0.75" />
+    <path d="M4 13h4.5a1.5 1.5 0 0 1 1.5 1.5v5.5a1.5 1.5 0 0 1-1.5 1.5H4v-8.5z" fill={color} opacity="0.5" />
   </svg>
 );
 
