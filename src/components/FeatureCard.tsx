@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import type { LucideIcon } from 'lucide-react';
 
 interface FeatureCardProps {
@@ -6,7 +5,7 @@ interface FeatureCardProps {
   description: string;
   icon: LucideIcon;
   gradient: string;
-  delay: number;
+  color: string;
 }
 
 export default function FeatureCard({
@@ -14,50 +13,104 @@ export default function FeatureCard({
   description,
   icon: Icon,
   gradient,
-  delay,
+  color,
 }: FeatureCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: 'easeOut', delay }}
-      className="relative flex flex-col justify-start items-start w-full max-w-[260px] md:max-w-[300px] group mx-auto"
+    <div
+      className="group relative flex flex-col w-full h-full mx-auto"
+      style={{
+        perspective: '1000px',
+      }}
     >
-      {/* Glow Background */}
+      {/* Ambient Glow behind the card */}
       <div
-        className="absolute w-full h-[260px] md:h-[300px] opacity-60 rounded-[40px] pointer-events-none"
+        className="absolute inset-0 opacity-50 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[36px]"
         style={{
           background: gradient,
-          filter: 'blur(45px)',
+          filter: 'blur(32px)',
+          transform: 'translateZ(-1px)',
         }}
       />
 
-      {/* Foreground Card with Gradient Border */}
+      {/* Main Card Wrapper (Provides the gradient border) */}
       <div
-        className="relative self-stretch h-[260px] md:h-[300px] rounded-[40px] z-10 overflow-hidden"
+        className="relative flex-1 flex flex-col rounded-[36px] transition-all duration-500"
         style={{
-          border: '8px solid transparent',
-          background: `linear-gradient(#1A1A1C, #1A1A1C) padding-box, ${gradient} border-box`,
+          padding: '3px', // Border thickness
+          background: gradient,
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateY(0) scale(1)';
         }}
       >
-        {/* Content Inner Layout */}
-        <div className="w-full h-full p-7 flex flex-col justify-between">
-          {/* Icon */}
-          <div className="text-white/90">
-            <Icon size={32} strokeWidth={2.5} />
+        {/* Inner Card Content */}
+        <div
+          className="relative flex-1 flex flex-col p-8 lg:p-10 rounded-[33px] overflow-hidden"
+          style={{
+            background: 'var(--bg-card)', // Ties into the new design system
+            backdropFilter: 'blur(20px)',
+            // Fallback base color to ensure high contrast against the bright borders
+            backgroundColor: 'rgba(11, 14, 25, 0.95)',
+          }}
+        >
+          {/* Subtle noise/grid overlay inside the card for texture */}
+          <div className="absolute inset-0 pointer-events-none opacity-[0.02]" style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`,
+            backgroundSize: '24px 24px',
+          }} />
+
+          {/* Top highlight for 3D feel */}
+          <div
+            className="absolute top-0 left-0 right-0 h-[1px] opacity-40"
+            style={{
+              background: `linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent)`,
+            }}
+          />
+
+          {/* Icon Area */}
+          <div className="mb-8 relative z-10">
+            {/* Icon Glow */}
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 blur-xl opacity-30 mix-blend-screen transition-opacity duration-500 group-hover:opacity-60"
+              style={{ background: color }}
+            />
+            <div 
+              className="relative flex items-center justify-center rounded-2xl transition-transform duration-500 group-hover:scale-110"
+              style={{
+                width: 56, height: 56,
+                background: `rgba(255,255,255,0.04)`,
+                border: `1px solid rgba(255,255,255,0.1)`,
+                boxShadow: `inset 0 2px 10px rgba(255,255,255,0.05)`,
+              }}
+            >
+              <Icon size={26} style={{ color: '#fff' }} strokeWidth={2} />
+            </div>
           </div>
 
           {/* Text Content */}
-          <div>
-            <h3 className="text-white font-medium text-xl mb-3 tracking-tight">
+          <div className="mt-auto relative z-10">
+            <h3
+              className="font-display font-bold mb-4 tracking-tight"
+              style={{ fontSize: 24, color: 'var(--text-primary)' }}
+            >
               {title}
             </h3>
-            <p className="text-gray-400 text-[14px] leading-[1.6] font-normal selection:bg-white/20">
+            <p
+              className="font-body"
+              style={{
+                fontSize: 15,
+                lineHeight: 1.7,
+                color: 'var(--text-secondary)',
+              }}
+            >
               {description}
             </p>
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
