@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ArrowUp, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
 
 const SOCIALS = [
   { Icon: Github,   href: 'https://github.com/raghulcpro',                      label: 'GitHub' },

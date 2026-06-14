@@ -86,7 +86,7 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
           return (
             <div
               key={word}
-              ref={el => wordsRef.current[i] = el}
+              ref={el => { wordsRef.current[i] = el; }}
               className="absolute"
               style={{
                 fontFamily: isLast ? '"Syne", sans-serif' : '"Inter", sans-serif',
