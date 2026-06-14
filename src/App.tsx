@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Navbar from './sections/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
+import Features from './sections/Features';
 import Skills from './sections/Skills';
 import Experience from './sections/Experience';
 import Projects from './sections/Projects';
@@ -10,7 +11,7 @@ import Education from './sections/Education';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 
-const SECTIONS = ['home', 'about', 'skills', 'experience', 'projects', 'education', 'contact'];
+const SECTIONS = ['home', 'about', 'features', 'skills', 'experience', 'projects', 'education', 'contact'];
 
 function App() {
   const [isLightMode, setIsLightMode] = useState(() => {
@@ -145,6 +146,7 @@ function App() {
         <main>
           <Hero />
           <About />
+          <Features />
           <Skills />
           <Experience />
           <Projects />
