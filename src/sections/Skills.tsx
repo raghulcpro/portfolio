@@ -147,7 +147,6 @@ export default function Skills() {
                   style={{
                     background: 'var(--bg-card)',
                     backdropFilter: 'blur(20px)',
-                    backgroundColor: 'rgba(11, 14, 25, 0.95)',
                   }}
                 >
                   {/* Subtle noise/grid overlay inside the card */}
@@ -177,12 +176,12 @@ export default function Skills() {
                           className="flex items-center justify-center rounded-2xl transition-transform duration-500 group-hover:scale-110"
                           style={{
                             width: 48, height: 48,
-                            background: `rgba(255,255,255,0.04)`,
-                            border: `1px solid rgba(255,255,255,0.1)`,
-                            boxShadow: `inset 0 2px 10px rgba(255,255,255,0.05)`,
+                            background: 'var(--bg-surface)',
+                            border: '1px solid var(--border-glass)',
+                            boxShadow: 'none',
                           }}
                         >
-                          <Icon size={22} style={{ color: '#fff' }} strokeWidth={2} />
+                          <Icon size={22} style={{ color: 'var(--text-primary)' }} strokeWidth={2} />
                         </div>
                       ))}
                     </div>
@@ -205,9 +204,9 @@ export default function Skills() {
                           fontSize: 12,
                           fontFamily: "'Inter', sans-serif",
                           fontWeight: 500,
-                          color: '#fff',
-                          background: `rgba(255,255,255,0.05)`,
-                          border: `1px solid rgba(255,255,255,0.1)`,
+                          color: 'var(--text-primary)',
+                          background: 'var(--bg-surface)',
+                          border: '1px solid var(--border-glass)',
                           padding: '5px 12px',
                           borderRadius: 20,
                           letterSpacing: '0.01em',
@@ -218,8 +217,8 @@ export default function Skills() {
                           e.currentTarget.style.borderColor = `${cat.color}60`;
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.background = `rgba(255,255,255,0.05)`;
-                          e.currentTarget.style.borderColor = `rgba(255,255,255,0.1)`;
+                          e.currentTarget.style.background = 'var(--bg-surface)';
+                          e.currentTarget.style.borderColor = 'var(--border-glass)';
                         }}
                       >
                         {skill}

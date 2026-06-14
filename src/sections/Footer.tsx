@@ -98,7 +98,7 @@ export default function Footer() {
                     style={{
                       width: 30, height: 30,
                       border: '1px solid var(--border-glass)',
-                      background: 'rgba(255,255,255,0.03)',
+                      background: 'var(--bg-surface)',
                     }}
                   >
                     <Icon size={14} />
@@ -127,7 +127,7 @@ export default function Footer() {
               color: 'var(--text-muted)',
               padding: '7px 14px',
               border: '1px solid var(--border-glass)',
-              background: 'rgba(255,255,255,0.02)',
+              background: 'var(--bg-surface)',
               cursor: 'pointer',
             }}
             onMouseEnter={e => {
@@ -142,7 +142,7 @@ export default function Footer() {
               el.style.color = 'var(--text-muted)';
               el.style.borderColor = 'var(--border-glass)';
               el.style.transform = 'translateY(0)';
-              el.style.background = 'rgba(255,255,255,0.02)';
+              el.style.background = 'var(--bg-surface)';
             }}
           >
             Back to top

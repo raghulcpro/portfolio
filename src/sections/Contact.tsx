@@ -184,7 +184,6 @@ export default function Contact() {
                     style={{
                       background: 'var(--bg-card)',
                       backdropFilter: 'blur(20px)',
-                      backgroundColor: 'rgba(11, 14, 25, 0.95)',
                     }}
                   >
                     {/* Subtle noise overlay */}
@@ -211,12 +210,12 @@ export default function Contact() {
                         className="relative flex items-center justify-center rounded-xl transition-transform duration-500 group-hover:scale-110"
                         style={{
                           width: 46, height: 46,
-                          background: `rgba(255,255,255,0.04)`,
-                          border: `1px solid rgba(255,255,255,0.1)`,
-                          boxShadow: `inset 0 2px 10px rgba(255,255,255,0.05)`,
+                          background: 'var(--bg-surface)',
+                          border: '1px solid var(--border-glass)',
+                          boxShadow: 'none',
                         }}
                       >
-                        <Icon size={20} style={{ color: '#fff' }} strokeWidth={2} />
+                        <Icon size={20} style={{ color: 'var(--text-primary)' }} strokeWidth={2} />
                       </div>
                     </div>
 
@@ -283,7 +282,6 @@ export default function Contact() {
                   style={{
                     background: 'var(--bg-card)',
                     backdropFilter: 'blur(20px)',
-                    backgroundColor: 'rgba(11, 14, 25, 0.95)',
                   }}
                 >
                   {/* Subtle noise overlay */}
@@ -301,8 +299,8 @@ export default function Contact() {
                   />
 
                   <div className="relative z-10 flex items-center justify-center rounded-xl flex-shrink-0"
-                       style={{ width: 40, height: 40, background: `rgba(255,255,255,0.05)`, border: '1px solid rgba(255,255,255,0.1)' }}>
-                    <Icon size={18} style={{ color: '#fff' }} />
+                       style={{ width: 40, height: 40, background: 'var(--bg-surface)', border: '1px solid var(--border-glass)' }}>
+                    <Icon size={18} style={{ color: 'var(--text-primary)' }} />
                   </div>
                   <div className="flex-1 min-w-0 relative z-10">
                     <span className="font-display font-bold block" style={{ fontSize: 14, color: 'var(--text-primary)' }}>
@@ -315,7 +313,7 @@ export default function Contact() {
                   <ArrowUpRight
                     size={16}
                     className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10"
-                    style={{ color: '#fff', flexShrink: 0 }}
+                    style={{ color: 'var(--text-primary)', flexShrink: 0 }}
                   />
                 </div>
               </div>

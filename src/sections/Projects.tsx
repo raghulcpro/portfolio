@@ -203,7 +203,6 @@ export default function Projects() {
                   style={{
                     background: 'var(--bg-card)',
                     backdropFilter: 'blur(20px)',
-                    backgroundColor: 'rgba(11, 14, 25, 0.95)',
                   }}
                 >
                   {/* Subtle noise overlay */}
@@ -232,9 +231,9 @@ export default function Projects() {
                         className="relative flex items-center justify-center rounded-2xl transition-transform duration-500 group-hover:scale-110"
                         style={{
                           width: 56, height: 56,
-                          background: `rgba(255,255,255,0.04)`,
-                          border: `1px solid rgba(255,255,255,0.1)`,
-                          boxShadow: `inset 0 2px 10px rgba(255,255,255,0.05)`,
+                          background: 'var(--bg-surface)',
+                          border: '1px solid var(--border-glass)',
+                          boxShadow: 'none',
                         }}
                       >
                         {(() => { const Icon = PROJECT_ICONS[i]; return <Icon color={project.accentColor} />; })()}
@@ -249,8 +248,8 @@ export default function Projects() {
                         padding: '4px 10px',
                         borderRadius: 20,
                         color: project.accentColor,
-                        background: `rgba(255,255,255,0.05)`,
-                        border: `1px solid rgba(255,255,255,0.1)`,
+                        background: 'var(--bg-surface)',
+                        border: '1px solid var(--border-glass)',
                         letterSpacing: '0.04em',
                         fontWeight: 600,
                       }}
@@ -277,7 +276,7 @@ export default function Projects() {
                     {[
                       { label: 'Problem', text: project.problem, color: 'var(--text-secondary)' },
                       { label: 'Built',   text: project.built,   color: 'var(--text-secondary)' },
-                      { label: 'Result',  text: project.result,  color: '#fff' },
+                      { label: 'Result',  text: project.result,  color: 'var(--text-primary)' },
                     ].map(({ label, text, color }) => (
                       <p key={label} style={{ fontSize: 14, lineHeight: 1.65, color }}>
                         <span
@@ -299,9 +298,9 @@ export default function Projects() {
                         className="font-mono"
                         style={{
                           fontSize: 11,
-                          color: '#fff',
-                          background: `rgba(255,255,255,0.05)`,
-                          border: `1px solid rgba(255,255,255,0.1)`,
+                          color: 'var(--text-primary)',
+                          background: 'var(--bg-surface)',
+                          border: '1px solid var(--border-glass)',
                           padding: '4px 12px',
                           borderRadius: 8,
                           letterSpacing: '0.03em',
@@ -313,8 +312,8 @@ export default function Projects() {
                           e.currentTarget.style.borderColor = `${project.accentColor}60`;
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.background = `rgba(255,255,255,0.05)`;
-                          e.currentTarget.style.borderColor = `rgba(255,255,255,0.1)`;
+                          e.currentTarget.style.background = 'var(--bg-surface)';
+                          e.currentTarget.style.borderColor = 'var(--border-glass)';
                         }}
                       >
                         {tag}
@@ -325,7 +324,7 @@ export default function Projects() {
                   {/* Actions */}
                   <div
                     className="flex items-center gap-5 pt-5 relative z-10"
-                    style={{ borderTop: `1px solid rgba(255,255,255,0.08)` }}
+                    style={{ borderTop: '1px solid var(--border-glass)' }}
                   >
                     <a
                       href={project.github}
@@ -345,7 +344,7 @@ export default function Projects() {
                         href="#"
                         className="flex items-center gap-2 font-body font-medium transition-colors duration-200"
                         style={{ fontSize: 13, color: 'var(--text-muted)', textDecoration: 'none' }}
-                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#fff'; }}
+                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'var(--text-primary)'; }}
                         onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--text-muted)'; }}
                       >
                         Live Demo

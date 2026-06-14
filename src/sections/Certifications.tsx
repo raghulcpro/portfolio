@@ -159,7 +159,6 @@ export default function Certifications() {
                   style={{
                     background: 'var(--bg-card)',
                     backdropFilter: 'blur(20px)',
-                    backgroundColor: 'rgba(11, 14, 25, 0.95)',
                   }}
                 >
                   {/* Subtle noise overlay */}
@@ -188,9 +187,9 @@ export default function Certifications() {
                         className="relative flex items-center justify-center rounded-xl transition-transform duration-500 group-hover:scale-110"
                         style={{
                           width: 48, height: 48,
-                          background: `rgba(255,255,255,0.04)`,
-                          border: `1px solid rgba(255,255,255,0.1)`,
-                          boxShadow: `inset 0 2px 10px rgba(255,255,255,0.05)`,
+                          background: 'var(--bg-surface)',
+                          border: '1px solid var(--border-glass)',
+                          boxShadow: 'none',
                         }}
                       >
                         {(() => { const Icon = CERT_ICONS[i]; return <Icon color={cert.accent} />; })()}
@@ -203,8 +202,8 @@ export default function Certifications() {
                         fontSize: 10.5,
                         padding: '3px 10px',
                         color: cert.accent,
-                        background: `rgba(255,255,255,0.05)`,
-                        border: `1px solid rgba(255,255,255,0.1)`,
+                        background: 'var(--bg-surface)',
+                        border: '1px solid var(--border-glass)',
                         letterSpacing: '0.04em',
                       }}
                     >
@@ -238,7 +237,7 @@ export default function Certifications() {
                   {/* Provider row */}
                   <div
                     className="flex items-center justify-between pt-4 relative z-10"
-                    style={{ borderTop: `1px solid rgba(255,255,255,0.08)` }}
+                    style={{ borderTop: '1px solid var(--border-glass)' }}
                   >
                     <div className="flex items-center gap-2">
                       <BadgeCheck size={14} style={{ color: cert.accent, flexShrink: 0 }} />
@@ -284,7 +283,6 @@ export default function Certifications() {
                 style={{
                   background: 'var(--bg-card)',
                   backdropFilter: 'blur(20px)',
-                  backgroundColor: 'rgba(11, 14, 25, 0.95)',
                   minHeight: 210,
                 }}
               >

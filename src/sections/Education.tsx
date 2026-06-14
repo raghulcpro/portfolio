@@ -164,7 +164,6 @@ export default function Education() {
                       style={{
                         background: 'var(--bg-card)',
                         backdropFilter: 'blur(20px)',
-                        backgroundColor: 'rgba(11, 14, 25, 0.95)',
                       }}
                     >
                       {/* Subtle noise overlay */}
@@ -209,9 +208,9 @@ export default function Education() {
                             style={{
                               fontSize: 10.5,
                               padding: '3px 10px',
-                              color: '#fff',
-                              background: `rgba(255,255,255,0.05)`,
-                              border: `1px solid rgba(255,255,255,0.1)`,
+                              color: 'var(--text-primary)',
+                              background: 'var(--bg-surface)',
+                              border: '1px solid var(--border-glass)',
                               letterSpacing: '0.03em',
                               whiteSpace: 'nowrap',
                             }}

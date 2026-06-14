@@ -90,7 +90,6 @@ export default function Experience() {
                 style={{
                   background: 'var(--bg-card)',
                   backdropFilter: 'blur(20px)',
-                  backgroundColor: 'rgba(11, 14, 25, 0.95)',
                 }}
               >
                 {/* Subtle noise overlay */}
@@ -181,7 +180,7 @@ export default function Experience() {
                 </ul>
 
                 {/* Skills used */}
-                <div className="mt-8 pt-6 flex flex-wrap gap-2 relative z-10" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+                <div className="mt-8 pt-6 flex flex-wrap gap-2 relative z-10" style={{ borderTop: '1px solid var(--border-glass)' }}>
                   {['Flutter', 'Dart', 'Firebase', 'State Management', 'REST APIs'].map(skill => (
                     <span
                       key={skill}
@@ -190,9 +189,9 @@ export default function Experience() {
                         fontSize: 11,
                         padding: '4px 12px',
                         borderRadius: 8,
-                        color: '#fff',
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid rgba(255,255,255,0.1)',
+                        color: 'var(--text-primary)',
+                        background: 'var(--bg-surface)',
+                        border: '1px solid var(--border-glass)',
                         letterSpacing: '0.03em',
                         fontWeight: 500,
                         transition: 'all 0.3s ease',
@@ -202,8 +201,8 @@ export default function Experience() {
                         e.currentTarget.style.borderColor = `rgba(99,102,241,0.6)`;
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.background = `rgba(255,255,255,0.05)`;
-                        e.currentTarget.style.borderColor = `rgba(255,255,255,0.1)`;
+                        e.currentTarget.style.background = 'var(--bg-surface)';
+                        e.currentTarget.style.borderColor = 'var(--border-glass)';
                       }}
                     >
                       {skill}

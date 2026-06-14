@@ -52,8 +52,6 @@ export default function FeatureCard({
           style={{
             background: 'var(--bg-card)', // Ties into the new design system
             backdropFilter: 'blur(20px)',
-            // Fallback base color to ensure high contrast against the bright borders
-            backgroundColor: 'rgba(11, 14, 25, 0.95)',
           }}
         >
           {/* Subtle noise/grid overlay inside the card for texture */}
@@ -81,12 +79,12 @@ export default function FeatureCard({
               className="relative flex items-center justify-center rounded-2xl transition-transform duration-500 group-hover:scale-110"
               style={{
                 width: 56, height: 56,
-                background: `rgba(255,255,255,0.04)`,
-                border: `1px solid rgba(255,255,255,0.1)`,
-                boxShadow: `inset 0 2px 10px rgba(255,255,255,0.05)`,
+                background: 'var(--bg-surface)',
+                border: '1px solid var(--border-glass)',
+                boxShadow: 'none',
               }}
             >
-              <Icon size={26} style={{ color: '#fff' }} strokeWidth={2} />
+              <Icon size={26} style={{ color: 'var(--text-primary)' }} strokeWidth={2} />
             </div>
           </div>
 

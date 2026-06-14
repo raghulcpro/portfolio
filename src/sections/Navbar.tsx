@@ -67,9 +67,7 @@ export default function Navbar({ isLightMode, toggleTheme, activeSection }: Navb
           className="absolute inset-0 transition-all duration-500"
           style={{
             background: scrolled
-              ? isLightMode
-                ? 'rgba(248,249,252,0.88)'
-                : 'rgba(5,8,22,0.82)'
+              ? 'var(--bg-surface-glass)'
               : 'transparent',
             backdropFilter: scrolled ? 'blur(28px) saturate(180%)' : 'none',
             WebkitBackdropFilter: scrolled ? 'blur(28px) saturate(180%)' : 'none',
@@ -323,7 +321,7 @@ export default function Navbar({ isLightMode, toggleTheme, activeSection }: Navb
       <div
         className="fixed inset-0 z-40 md:hidden flex flex-col items-center justify-center transition-all duration-400"
         style={{
-          background: 'rgba(5,8,22,0.97)',
+          background: 'var(--bg-surface-glass)',
           backdropFilter: 'blur(32px)',
           opacity: mobileMenuOpen ? 1 : 0,
           pointerEvents: mobileMenuOpen ? 'auto' : 'none',
@@ -341,7 +339,7 @@ export default function Navbar({ isLightMode, toggleTheme, activeSection }: Navb
             boxShadow: '0 8px 32px rgba(99,102,241,0.4)',
           }}
         >
-          <span style={{ fontFamily: '"Syne",sans-serif', fontWeight: 800, fontSize: 22, color: '#fff' }}>RV</span>
+          <span style={{ fontFamily: '"Syne",sans-serif', fontWeight: 800, fontSize: 22, color: 'var(--text-primary)' }}>RV</span>
         </div>
 
         {/* Nav links */}
@@ -356,7 +354,7 @@ export default function Navbar({ isLightMode, toggleTheme, activeSection }: Navb
                 className="font-display font-bold tracking-tight transition-all duration-200 px-8 py-3 rounded-2xl"
                 style={{
                   fontSize: 24,
-                  color: isActive ? '#fff' : 'rgba(241,245,249,0.55)',
+                  color: isActive ? 'var(--text-primary)' : 'var(--text-muted)',
                   background: isActive ? 'linear-gradient(135deg,rgba(99,102,241,0.20),rgba(34,211,238,0.12))' : 'transparent',
                   border: isActive ? '1px solid rgba(99,102,241,0.28)' : '1px solid transparent',
                   animationDelay: `${i * 0.05}s`,
@@ -380,7 +378,7 @@ export default function Navbar({ isLightMode, toggleTheme, activeSection }: Navb
               fontFamily: '"Inter",sans-serif',
               fontSize: 14,
               fontWeight: 600,
-              color: '#fff',
+              color: 'white',
               background: 'var(--grad-primary)',
               borderRadius: 12,
               textDecoration: 'none',

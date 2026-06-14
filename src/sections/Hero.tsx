@@ -94,7 +94,8 @@ export default function Hero() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(6,9,20,0.52) 0%, rgba(6,9,20,0.72) 100%)',
+            background: 'var(--bg-base)',
+            opacity: 0.6,
           }}
         />
         {/* Connect Button over Spline */}
@@ -144,11 +145,11 @@ export default function Hero() {
           width: '100%',
           padding: 'clamp(40px, 6vw, 64px) clamp(28px, 6vw, 64px)',
           marginTop: 'var(--nav-height)',
-          backgroundColor: 'rgba(6, 9, 20, 0.62)',
+          backgroundColor: 'var(--bg-surface-glass)',
           backdropFilter: 'blur(28px) saturate(140%)',
           WebkitBackdropFilter: 'blur(28px) saturate(140%)',
-          border: '1px solid rgba(255, 255, 255, 0.07)',
-          boxShadow: '0 20px 80px rgba(0, 0, 0, 0.50), inset 0 1px 0 rgba(255,255,255,0.06)',
+          border: '1px solid var(--border-glass)',
+          boxShadow: 'var(--shadow-hero), inset 0 1px 0 rgba(255,255,255,0.06)',
         }}
       >
         {/* Eyebrow */}
