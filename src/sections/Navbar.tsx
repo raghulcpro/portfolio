@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X, Moon, Sun, Download } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 
 interface NavbarProps {
-  isLightMode: boolean;
-  toggleTheme: () => void;
   activeSection: string;
 }
 
@@ -17,7 +15,7 @@ const NAV_LINKS = [
   { label: 'Contact',    href: '#contact' },
 ];
 
-export default function Navbar({ isLightMode, toggleTheme, activeSection }: NavbarProps) {
+export default function Navbar({ activeSection }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled]             = useState(false);
   const [hoveredLink, setHoveredLink]       = useState<string | null>(null);
@@ -260,35 +258,7 @@ export default function Navbar({ isLightMode, toggleTheme, activeSection }: Navb
               Resume
             </a>
 
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="flex items-center justify-center rounded-xl transition-all duration-200"
-              style={{
-                width: 36,
-                height: 36,
-                color: 'var(--text-secondary)',
-                border: '1px solid var(--border-glass)',
-                background: 'var(--bg-surface-glass)',
-                backdropFilter: 'blur(8px)',
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'var(--border-hover)';
-                (e.currentTarget as HTMLElement).style.color = 'var(--accent-indigo)';
-                (e.currentTarget as HTMLElement).style.transform = 'scale(1.08) rotate(15deg)';
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'var(--border-glass)';
-                (e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)';
-                (e.currentTarget as HTMLElement).style.transform = 'scale(1) rotate(0deg)';
-              }}
-              aria-label="Toggle theme"
-            >
-              {isLightMode
-                ? <Moon size={15} strokeWidth={2} />
-                : <Sun size={15} strokeWidth={2} />
-              }
-            </button>
+
 
             {/* Mobile Hamburger */}
             <button
@@ -388,20 +358,7 @@ export default function Navbar({ isLightMode, toggleTheme, activeSection }: Navb
             <Download size={15} />
             Resume
           </a>
-          <button
-            onClick={toggleTheme}
-            className="flex items-center justify-center rounded-xl"
-            style={{
-              width: 44,
-              height: 44,
-              color: 'var(--text-secondary)',
-              border: '1px solid var(--border-glass)',
-              background: 'var(--bg-surface-glass)',
-            }}
-            aria-label="Toggle theme"
-          >
-            {isLightMode ? <Moon size={18} /> : <Sun size={18} />}
-          </button>
+
         </div>
 
         {/* Available to work badge */}

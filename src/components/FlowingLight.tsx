@@ -199,18 +199,14 @@ class FlowingLight {
   }
 }
 
-interface FlowingLightProps {
-  isLightMode: boolean;
-}
-
-export default function FlowingLightCanvas({ isLightMode }: FlowingLightProps) {
+export default function FlowingLightCanvas() {
   const containerRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<FlowingLight | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const bgColor = isLightMode ? 0xF0F2F7 : 0x0a0e1a;
+    const bgColor = 0x0a0e1a;
     const scene = new FlowingLight(containerRef.current, {
       backgroundColor: bgColor,
       globalSpeed: 0.8,
@@ -230,12 +226,7 @@ export default function FlowingLightCanvas({ isLightMode }: FlowingLightProps) {
     };
   }, []);
 
-  useEffect(() => {
-    if (sceneRef.current) {
-      const bgColor = isLightMode ? 0xF0F2F7 : 0x0a0e1a;
-      sceneRef.current.setBackgroundColor(bgColor);
-    }
-  }, [isLightMode]);
+
 
   return (
     <div
