@@ -118,7 +118,7 @@ export default function Education() {
 
           <div className="space-y-6">
             {EDUCATION.map((edu, i) => (
-              <div key={i} className="relative flex items-start gap-7">
+              <div key={i} className="relative flex items-start gap-4 sm:gap-7">
                 {/* Node */}
                 <div
                   className="timeline-node relative z-20 flex-shrink-0 flex items-center justify-center rounded-full"
@@ -188,8 +188,8 @@ export default function Education() {
 
                       <div className="pl-3 relative z-10">
                         {/* Top row */}
-                        <div className="flex items-start justify-between gap-4 mb-2">
-                          <div>
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4 mb-2">
+                          <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
                             <span
                               className="font-display font-bold"
                               style={{ fontSize: 19, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}
@@ -197,14 +197,14 @@ export default function Education() {
                               {edu.degree}
                             </span>
                             <span
-                              className="font-body ml-2"
+                              className="font-body"
                               style={{ fontSize: 13.5, color: edu.accent, fontWeight: 500 }}
                             >
                               — {edu.field}
                             </span>
                           </div>
                           <span
-                            className="font-mono font-medium rounded-full flex-shrink-0"
+                            className="font-mono font-medium rounded-full flex-shrink-0 self-start sm:self-auto"
                             style={{
                               fontSize: 10.5,
                               padding: '3px 10px',

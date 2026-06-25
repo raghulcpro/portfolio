@@ -76,7 +76,7 @@ export default function About() {
           <h2 className="section-heading mb-7 animate-item">
             Turning{' '}
             <span className="text-gradient">data</span>{' '}
-            into decisions,<br />
+            into decisions,{' '}
             ideas into{' '}
             <span className="text-gradient">apps</span>.
           </h2>

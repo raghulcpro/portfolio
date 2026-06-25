@@ -28,6 +28,12 @@ export default function Navbar({ activeSection }: NavbarProps) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen]);
+
   // Hover pill tracking
   const handleLinkHover = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const container = navLinksRef.current;
@@ -227,8 +233,8 @@ export default function Navbar({ activeSection }: NavbarProps) {
 
             {/* Resume Button */}
             <a
-              href="/resume.pdf"
-              download
+            href="/Raghul_Venkatesan_Resume.pdf"
+            download="Raghul_Venkatesan_Resume.pdf"
               className="hidden md:flex items-center gap-1.5 transition-all duration-250"
               style={{
                 padding: '8px 16px',
@@ -340,8 +346,8 @@ export default function Navbar({ activeSection }: NavbarProps) {
         {/* Bottom actions */}
         <div className="flex items-center gap-3">
           <a
-            href="/resume.pdf"
-            download
+            href="/Raghul_Venkatesan_Resume.pdf"
+            download="Raghul_Venkatesan_Resume.pdf"
             className="flex items-center gap-2"
             style={{
               padding: '12px 24px',

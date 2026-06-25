@@ -98,52 +98,78 @@ export default function Hero() {
             opacity: 0.6,
           }}
         />
-        {/* Connect Button over Spline */}
+      </div>
+
+      {/* Bottom vignette — fades the hero into the page background naturally,
+          covers the Spline watermark without looking like a patch */}
+      <div
+        className="absolute bottom-0 left-0 right-0 pointer-events-none"
+        style={{
+          zIndex: 20,
+          height: 120,
+          background: 'linear-gradient(to top, var(--bg-base) 0%, var(--bg-base) 30%, transparent 100%)',
+        }}
+      />
+
+      {/* Connect button — desktop/tablet only (hidden on mobile, redundant with "Get in Touch") */}
+      <div
+        className="hidden sm:block"
+        style={{
+          position: 'absolute',
+          bottom: 28,
+          right: 28,
+          zIndex: 30,
+        }}
+      >
         <button
           onClick={() => scrollTo('#contact')}
           style={{
-            position: 'absolute',
-            bottom: 20,
-            right: 24,
-            zIndex: 15,
             display: 'flex',
             alignItems: 'center',
-            gap: 10,
-            padding: '12px 22px',
-            background: 'var(--grad-primary)',
-            border: 'none',
-            borderRadius: 12,
+            gap: 8,
+            padding: '11px 22px',
+            background: 'linear-gradient(135deg, rgba(99,102,241,0.18) 0%, rgba(34,211,238,0.10) 100%)',
+            border: '1px solid rgba(99,102,241,0.40)',
+            borderRadius: 40,
             cursor: 'pointer',
-            transition: 'all 0.25s cubic-bezier(0.34,1.56,0.64,1)',
-            boxShadow: '0 6px 24px rgba(99,102,241,0.40)',
+            backdropFilter: 'blur(14px)',
+            WebkitBackdropFilter: 'blur(14px)',
+            transition: 'all 0.25s ease',
+            boxShadow: '0 4px 20px rgba(99,102,241,0.25), inset 0 1px 0 rgba(255,255,255,0.08)',
             fontFamily: '"Inter", sans-serif',
-            fontSize: 14,
+            fontSize: 13,
             fontWeight: 600,
             color: '#fff',
-            letterSpacing: '0.02em',
+            letterSpacing: '0.04em',
+            whiteSpace: 'nowrap',
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.transform = 'translateY(-3px)';
-            e.currentTarget.style.boxShadow = '0 12px 30px rgba(99,102,241,0.55)';
+            e.currentTarget.style.background = 'var(--grad-primary)';
+            e.currentTarget.style.borderColor = 'transparent';
+            e.currentTarget.style.boxShadow = '0 8px 28px rgba(99,102,241,0.50)';
+            e.currentTarget.style.transform = 'translateY(-2px)';
           }}
           onMouseLeave={e => {
+            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(99,102,241,0.18) 0%, rgba(34,211,238,0.10) 100%)';
+            e.currentTarget.style.borderColor = 'rgba(99,102,241,0.40)';
+            e.currentTarget.style.boxShadow = '0 4px 20px rgba(99,102,241,0.25), inset 0 1px 0 rgba(255,255,255,0.08)';
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 6px 24px rgba(99,102,241,0.40)';
           }}
           aria-label="Go to contact section"
         >
           Connect
-          <Mail size={16} />
+          <Mail size={14} />
         </button>
       </div>
 
+
       {/* Content Card */}
       <div
-        className="relative z-20 flex flex-col items-center text-center rounded-3xl"
+        className="relative z-20 flex flex-col items-center text-center rounded-3xl mx-auto"
         style={{
           maxWidth: 780,
           width: '100%',
-          padding: 'clamp(40px, 6vw, 64px) clamp(28px, 6vw, 64px)',
+          padding: 'clamp(28px, 5vw, 64px) clamp(20px, 5vw, 64px)',
           marginTop: 'var(--nav-height)',
           backgroundColor: 'var(--bg-surface-glass)',
           backdropFilter: 'blur(28px) saturate(140%)',
@@ -219,7 +245,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div
           ref={ctaRef}
-          className="flex flex-col sm:flex-row items-center gap-3 mb-8"
+          className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 mb-8 w-full sm:w-auto"
           style={{ opacity: 0, transform: 'translateY(14px)' }}
         >
           <button onClick={() => scrollTo('#projects')} className="btn-primary">

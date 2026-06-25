@@ -250,7 +250,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               className="group relative flex flex-col cursor-pointer flex-1 sm:flex-none"
-              style={{ perspective: '1000px', textDecoration: 'none', minWidth: 220 }}
+              style={{ perspective: '1000px', textDecoration: 'none', minWidth: 0 }}
             >
               {/* Ambient Glow behind the card */}
               <div

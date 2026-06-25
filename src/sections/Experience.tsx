@@ -149,7 +149,7 @@ export default function Experience() {
                 {/* Role title */}
                 <h3
                   className="font-display font-bold mb-7 relative z-10"
-                  style={{ fontSize: 26, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}
+                  style={{ fontSize: 'clamp(20px, 4vw, 26px)', color: 'var(--text-primary)', letterSpacing: '-0.02em' }}
                 >
                   Flutter App Developer{' '}
                   <span className="text-gradient">Intern</span>

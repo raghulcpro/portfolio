@@ -87,14 +87,16 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
             <div
               key={word}
               ref={el => { wordsRef.current[i] = el; }}
-              className="absolute"
+              className="absolute px-6"
               style={{
                 fontFamily: isLast ? '"Syne", sans-serif' : '"Inter", sans-serif',
                 fontWeight: isLast ? 800 : 700,
-                fontSize: isLast ? 'clamp(32px, 6vw, 64px)' : 'clamp(28px, 5vw, 56px)',
+                fontSize: isLast ? 'clamp(28px, 7vw, 64px)' : 'clamp(24px, 5vw, 56px)',
                 letterSpacing: isLast ? '-0.02em' : '-0.01em',
                 textAlign: 'center',
-                whiteSpace: 'nowrap',
+                whiteSpace: isLast ? 'normal' : 'nowrap',
+                maxWidth: isLast ? '100vw' : 'none',
+                lineHeight: isLast ? 1.1 : 1,
                 willChange: 'background-position, opacity, filter',
                 backgroundImage: SWEEP_GRADIENT,
                 backgroundSize: '400% 100%',
@@ -102,7 +104,8 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-                color: 'transparent'
+                color: 'transparent',
+                wordBreak: 'break-word',
               }}
             >
               {word}

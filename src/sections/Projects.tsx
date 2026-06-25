@@ -252,6 +252,9 @@ export default function Projects() {
                         border: '1px solid var(--border-glass)',
                         letterSpacing: '0.04em',
                         fontWeight: 600,
+                        maxWidth: '55%',
+                        textAlign: 'right',
+                        lineHeight: 1.4,
                       }}
                     >
                       {project.role}

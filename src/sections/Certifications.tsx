@@ -258,8 +258,8 @@ export default function Certifications() {
 
           {/* Summary card */}
           <div
-            className="cert-badge group relative flex flex-col cursor-default"
-            style={{ perspective: '1000px', gridColumn: '1 / -1', '@media (min-width: 640px)': { gridColumn: 'span 2' }, '@media (min-width: 1024px)': { gridColumn: 'auto' } } as any}
+            className="cert-badge group relative flex flex-col cursor-default sm:col-span-2 lg:col-span-1"
+            style={{ perspective: '1000px' }}
           >
             <div
               className="absolute inset-0 opacity-40 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[24px]"
